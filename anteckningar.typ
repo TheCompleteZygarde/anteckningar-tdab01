@@ -30,7 +30,13 @@ $R^2$ är andelen av den totala variationen förklarad av modellen.
 
 $ P(max(x_0, ... , x_n) <= x) = P(x_1 <= x, ... , x_n <= x)$
 
-== Väntevärde och varians räknelagar
+== Väntevärde och varians
+=== Definition
+$"Var"[X] = sum_x (x - mu)^2 dot italic(p)x(x) =EE[X^2] - EE[X]^2$
+
+$sigma = "Std"(x) = sqrt("Var"(X))$
+
+=== Räknelagar
 $EE[c] = c$ om c är en konstant
 
 $EE[a X + b Y + c] = a EE[X] + b EE[Y] + c$ med a,b,c konstanter
