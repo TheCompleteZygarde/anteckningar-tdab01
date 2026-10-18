@@ -1,3 +1,7 @@
+== Lagen om total sannolikhet
+$B_1,…,B_5$ är en partitionering av S. Bayes sats ger då $P(B) = P(B|A) dot P(A) + P(B|accent(A,-)) dot P(accent(A,-))$ \
+Alternativ form av Bayes sats: $P(A|B) = (P(B|A) dot P(A))/(P(B|A) dot P(A) + P(B|A^c) dot P(A^c))$ ($A^c = accent(A,-)$)
+
 == Central Limit Theorem (CLIT)
 Om x har fördelning med $mu$ $sigma$ så är $accent(x, -)$ normalfördelad med $mu = mu$, $sigma = sigma/sqrt(n)$ n = storleken av stickprovet
 
