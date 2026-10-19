@@ -5,7 +5,7 @@
 $B_1,…,B_5$ är en partitionering av S. Bayes sats ger då $P(B) = P(B|A) dot P(A) + P(B|accent(A,-)) dot P(accent(A,-))$ \
 Alternativ form av Bayes sats: $P(A|B) = (P(B|A) dot P(A))/(P(B|A) dot P(A) + P(B|A^c) dot P(A^c))$ ($A^c = accent(A,-)$)
 
-$P(A|B) = P(A union B) / P(B)$
+$P(A|B) = P(A inter B) / P(B)$
 
 == Central Limit Theorem (CLIT / CLT / CGS)
 Om x har fördelning med $mu$ $sigma$ så är $accent(x, -)$ normalfördelad med $mu = mu$, $sigma = sigma/sqrt(n)$ n = storleken av stickprovet
@@ -20,6 +20,12 @@ Så, för ett test är konfidensnivån oddsen att alternativa hypotesen stämmer
 *Styrka* = *konfidensnivå* = $bold(P)("Förkasta" H_0 | H_A "är sann") = 1 - "typ II fel"$
 
 P-värdet för en observation $Z_"obs"$ är $P(Z>Z_"obs")$
+
+=== konfidens-interval
+
+2-sidigt: $accent(X, -) = accent(x, -) plus.minus z_(alpha "/" 2) * "STD"_"ERR"$
+1-sidigt: $accent(X, -) = accent(x, -) plus.minus z_(alpha) * "STD"_"ERR"$
+Där $"STD"_"ERR" = s / sqrt(n)$
 
 == Regression
 
@@ -40,6 +46,9 @@ $ P(max(x_0, ... , x_n) <= x) = P(x_1 <= x, ... , x_n <= x)$
 $"Var"[X] = sum_x (x - mu)^2 dot italic(p)x(x) =EE[X^2] - EE[X]^2$
 
 $sigma = "Std"(x) = sqrt("Var"(X))$
+
+==== Stickprovsvarians
+$s^2 = 1/(n - 1) sum_(i=1)^n (x_i - accent(x, -))^2 = 1/(n-1) (sum_(i=1)^n x_i^2 - 1/n (sum_(i=1)^n x_i)^2)$
 
 === Räknelagar
 $EE[c] = c$ om c är en konstant
