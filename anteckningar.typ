@@ -7,7 +7,7 @@ Alternativ form av Bayes sats: $P(A|B) = (P(B|A) dot P(A))/(P(B|A) dot P(A) + P(
 
 $P(A|B) = P(A union B) / P(B)$
 
-== Central Limit Theorem (CLIT)
+== Central Limit Theorem (CLIT / CLT / CGS)
 Om x har fördelning med $mu$ $sigma$ så är $accent(x, -)$ normalfördelad med $mu = mu$, $sigma = sigma/sqrt(n)$ n = storleken av stickprovet
 
 == Signifikansnivå vs konfidensnivå
