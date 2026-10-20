@@ -2,28 +2,28 @@
 // Snälla ha marginal jag får huvudvärk av att titta på skiten annars
 // Marginal behövs inte hallå fett onödigt
 //#set page(margin: (top:0.2cm, bottom:0cm, left:0cm, right:0cm))
-#set page(margin: (top:1.2cm, bottom:1cm, left:1cm, right:1cm))
+#set page(margin: (top: 1.2cm, bottom: 1cm, left: 1cm, right: 1cm))
 
 #set page(columns: 2)
 
 == Definition av |
 
-$ P(A | B) = P(A inter B) / P(B)$
+$P(A | B) = P(A inter B) / P(B)$
 
 == Bayes sats
 
 $ P(A | B) = (P(B | A) * P(A)) / P(B) $
 
 == Alternativ form av Bayes sats:
-$ P(A|B) = (P(B|A) dot P(A))/(P(B|A) dot P(A) + P(B|A^c) dot P(A^c)) space space space space (A^c = accent(A,-)) $
+$ P(A|B) = (P(B|A) dot P(A))/(P(B|A) dot P(A) + P(B|A^c) dot P(A^c)) space space space space (A^c = accent(A, -)) $
 
 == Lagen om total sannolikhet
 $B_1,…,B_5$ är en partitionering av S. Bayes sats ger då
-$ P(B) = P(B|A) dot P(A) + P(B|accent(A,-)) dot P(accent(A,-)) $
+$ P(B) = P(B|A) dot P(A) + P(B|accent(A, -)) dot P(accent(A, -)) $
 
 == Räknelag
 
-$ P(max(x_0, ... , x_n) <= x) = P(x_1 <= x, ... , x_n <= x)$
+$P(max(x_0, ..., x_n) <= x) = P(x_1 <= x, ... , x_n <= x)$
 
 == Central Limit Theorem (CLIT / CLT / CGS)
 Om x har fördelning med $mu$ $sigma$ så är $accent(x, -)$ normalfördelad med $mu = mu$, $sigma = sigma/sqrt(n)$ n = storleken av stickprovet
@@ -47,19 +47,17 @@ Där $"STD"_"ERR" = s / sqrt(n)$
 
 == Regression
 
-$S S_"TOTAL" = sum_i (y_i - accent(y,-))^2$
+$S S_"TOTAL" = sum_i (y_i - accent(y, -))^2$
 
-$S S_"REG" = sum_i (accent(y_i, hat) - accent(y,-))^2$
+$S S_"REG" = sum_i (accent(y_i, hat) - accent(y, -))^2$
 
-$S S_"ERR" = sum_i (y_i - accent(y,hat))^2$
+$S S_"ERR" = sum_i (y_i - accent(y, hat))^2$
 
 $R^2 = (S S_"REG")/(S S_"TOTAL")$
 
 $R^2$ är andelen av den totala variationen förklarad av modellen.
 
-$ P(max(x_0, ... , x_n) <= x) = P(x_1 <= x, ... , x_n <= x)$
-=======
-$ P(A|B) = P(A inter B) / P(B) $
+$P(max(x_0, ..., x_n) <= x) = P(x_1 <= x, ... , x_n <= x)$
 
 == Väntevärde och varians
 === Definition
@@ -81,7 +79,7 @@ $"Var"[a X + b Y + c] = a^2 "Var"[X] + b^2 "Var"[Y] + 2 a b "Cov"(X,Y)$ med a,b,
 
 $P(A|B) = P(A union B) / P(B)$
 
-$"cov"(X, Y) = E[(X-E[X])(Y-E[Y])] = sum_i ((x_i-accent(x, -)) (y_i - accent(y, -))) =  E(X Y) - E[X] * E[Y]$
+$"cov"(X, Y) = E[(X-E[X])(Y-E[Y])] = sum_i ((x_i-accent(x, -)) (y_i - accent(y, -))) = E(X Y) - E[X] * E[Y]$
 
 === Om X, Y Oberoende:
 
@@ -179,37 +177,37 @@ Där $"STD"_"ERR" = s / sqrt(n)$
 
 == Regression
 
-$S S_"TOTAL" = sum_i (y_i - accent(y,-))^2$
+$S S_"TOTAL" = sum_i (y_i - accent(y, -))^2$
 
-$S S_"REG" = sum_i (accent(y_i, hat) - accent(y,-))^2$
+$S S_"REG" = sum_i (accent(y_i, hat) - accent(y, -))^2$
 
-$S S_"ERR" = sum_i (y_i - accent(y,hat))^2$
+$S S_"ERR" = sum_i (y_i - accent(y, hat))^2$
 
 $R^2 = (S S_"REG")/(S S_"TOTAL")$
 
 $R^2$ är andelen av den totala variationen förklarad av modellen.
 
-$ S_(x y) = sum_i (x_i - accent(x, -)) (y_i - accent(y, -))$
+$S_(x y) = sum_i (x_i - accent(x, -)) (y_i - accent(y, -))$
 
-$ S_(x y) = (n - 1) "cov"(x, y)$
+$S_(x y) = (n - 1) "cov"(x, y)$
 
-$ S_(x x) = (n - 1) "var"(x)$
+$S_(x x) = (n - 1) "var"(x)$
 
 === lutningen $b_1$
 
-$ b_1 = s_(x y) / s_(x x) = (sum_i (x_i - accent(x, -)) y_i) / s_(x x)$
+$b_1 = s_(x y) / s_(x x) = (sum_i (x_i - accent(x, -)) y_i) / s_(x x)$
 
-$ "var"(b_1) = (sum_i (x_i - accent(x, -)^2 "var"(y_i))) / s_(x x)^2 = sigma^2 / s_(x x)$
+$"var"(b_1) = (sum_i (x_i - accent(x, -)^2 "var"(y_i))) / s_(x x)^2 = sigma^2 / s_(x x)$
 
 === konstanttermen $b_0$
 
-$ b_0 = accent(y, -) - b_1 accent(x, -)$
+$b_0 = accent(y, -) - b_1 accent(x, -)$
 
 === konfidens-intervall och hypotestest för b_1
 
-$ b_1 plus.minus t_(alpha "/" 2) s / sqrt(S_(x x))$
+$b_1 plus.minus t_(alpha "/" 2) s / sqrt(S_(x x))$
 
-$ t = (b_1 - B) / (s "/" sqrt(S_(x x)))$
+$t = (b_1 - B) / (s "/" sqrt(S_(x x)))$
 
 == bayesiskt konfidens-intervall/kredibilitets-intervall
 
