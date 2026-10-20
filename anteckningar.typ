@@ -72,3 +72,21 @@ $"Var"[X + Y] = "Var"[X] + "Var"[Y]$
 === Chebyshevs olikhet
 
 $PP(abs(X-mu) > epsilon)<=(sigma/epsilon)^2$
+
+=== Normalfördelning:
+==== Hur summerar normalfördelning
+
+$X ~ "norm"(sigma=sigma_x, mu=mu_x)$
+
+$Y ~ "norm"(sigma=sigma_y, mu=mu_y)$
+
+$X + Y ~ "norm"(sigma=sqrt((sigma_x)^2 + (sigma_y)^2), mu=mu_x + mu_y)$
+
+==== StandardError
+När du summerar varianser och tar medelvärdet av dem
+$"STD"_("ERR") = s^2/n$
+
+När du tar standardavvikelser på ett medelvärde
+$"STD"_("ERR") = s/sqrt(n)$
+
+
