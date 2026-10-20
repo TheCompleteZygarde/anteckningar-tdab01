@@ -1,45 +1,24 @@
 
-#set page(margin: (top:0.2cm, bottom:0cm, left:0cm, right:0cm))
+// Snälla ha marginal jag får huvudvärk av att titta på skiten annars
+//#set page(margin: (top:0.2cm, bottom:0cm, left:0cm, right:0cm))
+#set page(margin: (top:1.2cm, bottom:1cm, left:1cm, right:1cm))
+
+#set page(columns: 2)
+
+== Bayes sats
+
+$ P(A | B) = (P(B | A) * P(A)) / P(B) $
+
+== Alternativ form av Bayes sats:
+$ P(A|B) = (P(B|A) dot P(A))/(P(B|A) dot P(A) + P(B|A^c) dot P(A^c)) space space space space (A^c = accent(A,-)) $
 
 == Lagen om total sannolikhet
-$B_1,…,B_5$ är en partitionering av S. Bayes sats ger då $P(B) = P(B|A) dot P(A) + P(B|accent(A,-)) dot P(accent(A,-))$ \
-Alternativ form av Bayes sats: $P(A|B) = (P(B|A) dot P(A))/(P(B|A) dot P(A) + P(B|A^c) dot P(A^c))$ ($A^c = accent(A,-)$)
+$B_1,…,B_5$ är en partitionering av S. Bayes sats ger då
+$ P(B) = P(B|A) dot P(A) + P(B|accent(A,-)) dot P(accent(A,-)) $
 
-$P(A|B) = P(A inter B) / P(B)$
+== Definition av |
 
-== Central Limit Theorem (CLIT / CLT / CGS)
-Om x har fördelning med $mu$ $sigma$ så är $accent(x, -)$ normalfördelad med $mu = mu$, $sigma = sigma/sqrt(n)$ n = storleken av stickprovet
-
-== Signifikansnivå vs konfidensnivå
-Så, för ett test är konfidensnivån oddsen att alternativa hypotesen stämmer. konfidensnivå = 1 - signifikansnivå
-
-*Typ I fel* = *signifikansnivå* = $alpha = bold(P)("Förkasta" H_0 | H_0 "är sann")$
-
-*Typ 2 fel* = $bold(P)("Acceptera" H_0 | H_0 "är falsk")$
-
-*Styrka* = *konfidensnivå* = $bold(P)("Förkasta" H_0 | H_A "är sann") = 1 - "typ II fel"$
-
-P-värdet för en observation $Z_"obs"$ är $P(Z>Z_"obs")$
-
-=== konfidens-interval
-
-2-sidigt: $accent(X, -) = accent(x, -) plus.minus z_(alpha "/" 2) * "STD"_"ERR"$
-1-sidigt: $accent(X, -) = accent(x, -) plus.minus z_(alpha) * "STD"_"ERR"$
-Där $"STD"_"ERR" = s / sqrt(n)$
-
-== Regression
-
-$S S_"TOTAL" = sum_i (y_i - accent(y,-))^2$
-
-$S S_"REG" = sum_i (accent(y_i, hat) - accent(y,-))^2$
-
-$S S_"ERR" = sum_i (y_i - accent(y,hat))^2$
-
-$R^2 = (S S_"REG")/(S S_"TOTAL")$
-
-$R^2$ är andelen av den totala variationen förklarad av modellen.
-
-$ P(max(x_0, ... , x_n) <= x) = P(x_1 <= x, ... , x_n <= x)$
+$ P(A|B) = P(A inter B) / P(B) $
 
 == Väntevärde och varians
 === Definition
@@ -90,3 +69,78 @@ När du tar standardavvikelser på ett medelvärde
 $"STD"_("ERR") = s/sqrt(n)$
 
 
+
+== Konvertera Gamma till Poisson
+
+$ P("Gamma"(alpha, lambda) > k) = P("Poisson"(lambda * k) < alpha) $
+
+Där $alpha$ är ett heltal.
+Fungerar lika för $<, >, <= "och" >=$.
+
+== Central Limit Theorem (CLIT / CLT / CGS)
+Om x har fördelning med $mu$ $sigma$ så är $accent(x, -)$ normalfördelad med $mu = mu$, $sigma = sigma/sqrt(n)$ n = storleken av stickprovet
+
+#colbreak()
+
+== Hypotestest
+
+Allmänt: $H_0 "vs" H_A$
++ Välj teststatistika, $T = T(X_1, ... , X_n)$.
++ Beräkna nollfördelningen för T,
+  dvs samplingfördelningen för T om $H_0$ är sann.
++ Bestäm förkastningsregionen R i nollfördelningen så att
+  $P(T in R | H_0) = alpha)$.
++ Förkasta $H_0$ på signifikansnivån $alpha$ om
+  $T_"obs" in R, "där" T_"obs"$ är det
+observerade värdet på T.
+
+== Z-test
+
+Hypotestest för när X är normalfördelad.
+Normalisera först X till $Z = (X - mu_0) / sigma$
+Jämför sedan Z med $z_(alpha "/" 2)$ eller $z_(alpha)$.
+Använda $z_(alpha "/" 2)$ för tvåsidigt test och $z_(alpha)$ för ensidigt test. $mu_0$ är $mu$-värdet enligt noll-hypotesen $H_0$.
+
+=== Z-test för $accent(X, -)$
+
+När vi gör test för ett medelvärde normaliserar vi istället genom $Z = (accent(X, -) - mu_0) / (s "/" sqrt(n))$
+
+== T-test
+
+Samma som för Z-test men jämför med t-tabellen istället ($t_alpha$ eller $t_(alpha "/" 2)$).
+Frihetsgrader "df" i t-tabellen är oftast n - 1 men ibland n - 2 för att fucka med oss.
+För $accent(X, -)$ är $"df" = n - 1$.
+För en linjär regressionsmodell är df = n - antal variabler i regressionsmodellen.
+
+== Signifikansnivå vs konfidensnivå
+Så, för ett test är konfidensnivån oddsen att alternativa hypotesen stämmer. konfidensnivå = 1 - signifikansnivå
+
+*Typ I fel* = *signifikansnivå* = $alpha = bold(P)("Förkasta" H_0 | H_0 "är sann")$
+
+*Typ 2 fel* = $bold(P)("Acceptera" H_0 | H_0 "är falsk")$
+
+*Styrka* = *konfidensnivå* = $bold(P)("Förkasta" H_0 | H_A "är sann") = 1 - "typ II fel"$
+
+P-värdet för en observation $Z_"obs"$ är $P(Z>Z_"obs")$
+
+=== konfidens-interval
+
+2-sidigt: $accent(X, -) = accent(x, -) plus.minus z_(alpha "/" 2) * "STD"_"ERR"$
+
+1-sidigt: $accent(X, -) = accent(x, -) plus.minus z_(alpha) * "STD"_"ERR"$
+
+Där $"STD"_"ERR" = s / sqrt(n)$
+
+== Regression
+
+$S S_"TOTAL" = sum_i (y_i - accent(y,-))^2$
+
+$S S_"REG" = sum_i (accent(y_i, hat) - accent(y,-))^2$
+
+$S S_"ERR" = sum_i (y_i - accent(y,hat))^2$
+
+$R^2 = (S S_"REG")/(S S_"TOTAL")$
+
+$R^2$ är andelen av den totala variationen förklarad av modellen.
+
+$ P(max(x_0, ... , x_n) <= x) = P(x_1 <= x, ... , x_n <= x)$
