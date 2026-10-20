@@ -113,9 +113,14 @@ Där $alpha$ är ett heltal.
 Fungerar lika för $<, >, <= "och" >=$.
 
 == Central Limit Theorem (CLIT / CLT / CGS)
-Om x har fördelning med $mu$ $sigma$ så är $accent(x, -)$ normalfördelad med $mu = mu$, $sigma = sigma/sqrt(n)$ n = storleken av stickprovet
+Om x har fördelning med $mu$ $sigma$ så är $accent(x, -)$ normalfördelad med $mu = mu$, $sigma = sigma/sqrt(n)$.
 
-#colbreak()
+n = storleken av stickprovet
+
+=== Applikationer
+
+Om n är stort gäller (notera "- 0.5"!):
+$ P("Binom"(n, p) >= a) approx \ P("Norm"(mu = p q, sigma = n p (1 - p)) >= a - 0.5) $
 
 == Hypotestest
 
