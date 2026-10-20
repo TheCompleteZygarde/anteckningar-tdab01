@@ -19,7 +19,7 @@ Så, för ett test är konfidensnivån oddsen att alternativa hypotesen stämmer
 
 *Styrka* = *konfidensnivå* = $bold(P)("Förkasta" H_0 | H_A "är sann") = 1 - "typ II fel"$
 
-P-värdet för en observation $Z_"obs"$ är $P(Z>Z_"obs")$
+P-värdet för en observation $Z_"obs"$ av $Z$ är $P(Z>Z_"obs")$ är sannolikheten att nollhypotesen gäller. (säg inte det för statistiker kommer slå dig)
 
 === konfidens-interval
 
